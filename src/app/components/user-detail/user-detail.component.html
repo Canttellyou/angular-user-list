@@ -1,0 +1,25 @@
+<div class="details-container">
+    <button class="go-back" (click)="goBack()">
+        &#8592; Go back
+    </button>
+
+    @if (loading) {
+    <app-loader></app-loader>
+    }
+
+    @if (!loading && user) {
+    <div class="user-card">
+        <div class="card-blur"></div>
+        <div class="user-card_content">
+            <img [src]="user.avatar" [alt]="user.first_name">
+            <h2><span>Full name:</span> {{user.first_name}} {{user.last_name}}</h2>
+            <h2><span>Email:</span> {{user.email}}</h2>
+            <h2><span>Id:</span> {{user.id}}</h2>
+        </div>
+    </div>
+    }
+
+    @if (!loading && !user) {
+    <div>No user found</div>
+    }
+</div>

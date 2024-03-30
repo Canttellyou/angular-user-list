@@ -1,0 +1,27 @@
+.details-container {
+  padding: 2rem;
+
+  .user-card {
+    box-shadow: none;
+
+    &_content {
+      align-items: flex-start;
+
+      img {
+        align-self: center;
+        margin-bottom: 1rem;
+      }
+
+      span {
+        font-weight: 400;
+      }
+    }
+  }
+}
+
+.go-back {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}

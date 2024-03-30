@@ -1,0 +1,31 @@
+<app-header [userList]="users" (userListChange)="filterUsers($event)"></app-header>
+@if (loading) {
+<app-loader></app-loader>
+}
+
+@if (!loading && filteredUsers && filteredUsers.length > 0) {
+<div class="user-list">
+    <div class="user-list-container">
+        @for (user of filteredUsers; track $index) {
+        <div class="user-card" (click)="goToDetails(user.id)">
+            <div class="card-blur"></div>
+            <div class="user-card_content">
+                <img [src]="user.avatar" [alt]="user.first_name">
+                <h2>{{user.first_name}} {{user.last_name}}</h2>
+            </div>
+        </div>
+        }
+    </div>
+    <div class="pagination">
+        <button class="page-nav" (click)="onPageChange(currentPage - 1)"
+            [disabled]="currentPage === 1">Previous</button>
+        <span>Page {{ currentPage }}</span>
+        <button class="page-nav" (click)="onPageChange(currentPage + 1)"
+            [disabled]="currentPage === totalPages">Next</button>
+    </div>
+</div>
+}
+
+@if (!loading && filteredUsers && filteredUsers.length === 0) {
+<div>No users found</div>
+}

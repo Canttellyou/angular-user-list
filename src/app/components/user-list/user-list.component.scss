@@ -1,0 +1,24 @@
+.user-list-container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 1rem 5%;
+}
+
+.page-nav {
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.pagination {
+  margin-top: 1rem;
+}
